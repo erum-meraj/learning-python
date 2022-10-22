@@ -4,7 +4,7 @@ con = sql.connect(host = 'localhost', user = 'root', password = 'erummeraj', dat
 cur = con.cursor()
 #cur.execute("INSERT INTO python_db.student(Rollno, name, age, city) VALUES(4, 'd', 15, 'mumbai')")
 
-'''ctr = 1;
+ctr = 1;
 while ctr != 0:
     roll = int(input("Enter roll no. :    "))
     age = int(input("Enter age:    "))
@@ -15,7 +15,10 @@ while ctr != 0:
     con.commit()
     print("done")
     ctr = int(input("Enter 1 to insert another record or enter 0:   "))
-'''
-cur.execute("show databases")
-con.commit()
+
+#cur.execute("show databases")
+cur.execute("select * from student")
+rows=cur.fetchone()
+print(rows)
+
 con.close;
